@@ -23,6 +23,8 @@
 
 <body>
 
+	<% var error  %> 
+
 <div class="page-wrapper">
  	
     <!-- Preloader -->
@@ -60,6 +62,12 @@
 					<h2>Register</h2>
 					<div class="text"><span class="theme_color">Welcome!</span> Please confirm that you are visiting</div>
 				</div>
+
+<% if(error) {%> 
+	<div class="alert alert-danger">
+		<%= error  %> 
+	</div>
+ <% }%>	
 
 				<!-- Login Form -->
 				<div class="styled-form">
