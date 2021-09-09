@@ -50,7 +50,7 @@
         </div>
     </section>
     <!--End Page Title-->
-	
+	<% var error %> 
 	<!-- Login Section -->
 	<section class="login-section">
 		<div class="auto-container">
@@ -64,6 +64,11 @@
 				</div>
 
 				
+<% if(error) {%> 
+	<div class="alert alert-danger">
+		<%= error  %> 
+	</div>
+ <% }%>	
 				<!-- Login Form -->
 				<div class="styled-form">
 					<form method="POST">

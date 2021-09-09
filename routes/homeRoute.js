@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const {SignUpValidation} = require("../modules/validation")
 const {generateCrypt} = require("../modules/bcrypt")
-const homeSignUpPostController =  require("../controllers/homeSignUpPostController")
+const homeSignUpPostController =  require("../controllers/homeLoginPostController")
+const homeLoginPostController =  require("../controllers/homeSignUpPostController")
+
 
 router.get(["/","/index.html"],(req,res) =>{
     // console.log(req.db);
@@ -16,7 +18,7 @@ router.get("/register.html",(req,res) =>{
 router.get("/login.html",(req,res) =>{
     res.render("login");
 })
-
+router.post("/login.html",homeLoginPostController)
 
 router.post("/register.html",homeSignUpPostController);
 

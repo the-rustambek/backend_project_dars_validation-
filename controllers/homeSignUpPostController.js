@@ -1,3 +1,6 @@
+const {SignUpValidation} = require("../modules/validation")
+const {generateCrypt} = require("../modules/bcrypt")
+
 module.exports =async function homeSignUpPostController(req,res) {
     try{
             const data =  await SignUpValidation.validateAsync(req.body);
