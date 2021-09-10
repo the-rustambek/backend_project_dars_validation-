@@ -1,11 +1,13 @@
 const {compareHash} = require("../modules/bcrypt")
 const {LoginValidation} =  require("../modules/validation")
 const {createToken} = require("../modules/jwt")
+const {SignUpValidation} = require("../modules/validation")
+const {generateCrypt} = require("../modules/bcrypt")
 
 module.exports = async function homeLoginPostController(req,res ){
     try {
         const data = await LoginValidation.validateAsync(req.body);
-
+console.log(req.body)
         const user =  await req.db.users.findOne({
             email:data.email,
         });
