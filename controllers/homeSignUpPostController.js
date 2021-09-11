@@ -8,8 +8,11 @@ module.exports =async function homeSignUpPostController(req,res) {
             let user = await req.db.users.findOne({
                 email: data.email.toLowerCase(),
             });
+
+            let users = await req.db.users.find().toArray();
+
     
-            if(user) throw new Error("Email already exists")   // kodni shu qismida otvoradi bundan keyingi qismi ishlamayadi errorni keyin catch bilan ushlab oladi
+            if(user || users.length) throw new Error("Email or Admin already exists")   // kodni shu qismida otvoradi bundan keyingi qismi ishlamayadi errorni keyin catch bilan ushlab oladi
     
             user = await req.db.users.insertOne({
                 ...data,

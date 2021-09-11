@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const homeSignUpPostController =  require("../controllers/homeSignUpPostController")
 const homeLoginPostController =  require("../controllers/homeLoginPostController")
+const adminMiddleware =  require("../middlewares/adminMiddleware")
 
 
 router.get(["/","/index.html"],(req,res) =>{
@@ -23,6 +24,12 @@ router.get("/login.html",(req,res) =>{
         user:req.user,
     });
 })
+
+router.get("admin.html",adminMiddleware, (req,res) =>{
+    res.render("admin",{
+            user:req.user,
+    });
+});
 
 router.post("/login.html",homeLoginPostController)
 router.post("/register.html",homeSignUpPostController);
