@@ -6,19 +6,25 @@ const homeLoginPostController =  require("../controllers/homeLoginPostController
 
 router.get(["/","/index.html"],(req,res) =>{
     // console.log(req.db);
-    res.render("index");
+    res.render("index",{
+        user:req.user,
+    });
 })
 
 router.get("/register.html",(req,res) =>{
-    res.render("register");
+    res.render("register",{
+        user:req.user,
+    });
 })
 
 
 router.get("/login.html",(req,res) =>{
-    res.render("login");
+    res.render("login",{
+        user:req.user,
+    });
 })
-router.post("/login.html",homeLoginPostController)
 
+router.post("/login.html",homeLoginPostController)
 router.post("/register.html",homeSignUpPostController);
 
 
