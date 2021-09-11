@@ -1,8 +1,7 @@
 const router = require("express").Router();
-const {SignUpValidation} = require("../modules/validation")
-const {generateCrypt} = require("../modules/bcrypt")
-const homeSignUpPostController =  require("../controllers/homeLoginPostController")
-const homeLoginPostController =  require("../controllers/homeSignUpPostController")
+
+const homeSignUpPostController =  require("../controllers/homeSignUpPostController")
+const homeLoginPostController =  require("../controllers/homeLoginPostController")
 
 
 router.get(["/","/index.html"],(req,res) =>{

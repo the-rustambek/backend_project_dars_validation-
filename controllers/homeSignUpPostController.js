@@ -15,7 +15,7 @@ module.exports =async function homeSignUpPostController(req,res) {
                 ...data,
                 password: await generateCrypt(data.password)
             });
-            console.log(user)
+            // console.log(user)
             res.redirect("/login.html");
         }
         catch(error){

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Rustambek-Mamadaliyev0301/backend_project_dars_validation-#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cookie": "^0.4.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
@@ -27,7 +28,8 @@
     "joi": "^17.4.2",
     "jsonwebtoken": "^8.5.1",
     "mongo": "^0.1.0",
-    "mongodb": "^4.1.1"
+    "mongodb": "^4.1.1",
+    "parser": "^0.1.4"
   },
   "devDependencies": {}
 }
