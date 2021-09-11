@@ -10,8 +10,6 @@ module.exports =async function homeSignUpPostController(req,res) {
             });
 
             let users = await req.db.users.find().toArray();
-
-    
             if(user || users.length) throw new Error("Email or Admin already exists")   // kodni shu qismida otvoradi bundan keyingi qismi ishlamayadi errorni keyin catch bilan ushlab oladi
     
             user = await req.db.users.insertOne({

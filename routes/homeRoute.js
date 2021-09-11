@@ -25,7 +25,7 @@ router.get("/login.html",(req,res) =>{
     });
 })
 
-router.get("admin.html",adminMiddleware, (req,res) =>{
+router.get("/admin",adminMiddleware, (req,res) =>{
     res.render("admin",{
             user:req.user,
     });
