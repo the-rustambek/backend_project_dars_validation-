@@ -13,7 +13,7 @@ module.exports = async function homeLoginPostController(req,res ){
 
         if(!user) throw new Error("User not found");
         
-        const isTrust = await compareHash(user.password,data.password);
+        const isTrust = await compareHash(data.password,user.password);
 // console.log(isTrust)
         if(!isTrust) throw new Error("Password is incorrect");
 
